@@ -74,5 +74,5 @@ app.post('/api/payments/initialize', requireAuth, async (req,res) => {
  catch(e){res.status(502).json({error:'Payment sandbox is temporarily unavailable.'});}
 });
 // Static app served from the same origin so session cookies and API calls work.
-app.use(express.static(path.join(__dirname,'..')));
+app.use(express.static(path.join(__dirname)));
 app.listen(PORT,()=>console.log(`Firmco prototype running on http://localhost:${PORT}`));
